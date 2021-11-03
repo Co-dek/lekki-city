@@ -1,0 +1,292 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-size: 1em;
+    color: rgb(122, 121, 121);
+/*A Font Stack - the browser cycle through this list until it finds a font installed on the browser/computer */
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; 
+    line-height: 1.5; /* this adjust the space between lines and paragraph of text */ /* It is relative to the font size of the body element*/
+    
+}
+
+header {
+    background-color: #ffa949;
+    padding-top: 170px;         /* The "Padding" property add up to increase the overall height and width of the element  */
+    height: 850px;
+
+    /* box-sizing: border-box;          ------ Use Chrome INSPECT tool to confirm ------  */
+    background-image: url('building.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-image:   linear-gradient(orange, transparent 70%), 
+                        linear-gradient(to top, #fff, transparent 30%), /* 'TO TOP' value directs the gradient flow from bottom to top */
+                            url('building.jpg') ; /*This property over-rides the previous background image*/
+                                                            /* the TRANSPARENT value allows the image to show through the gradeint color*/
+}
+
+.pre-header {
+    font-size: 1.625em; /*26px/16px */
+    color: #fff;
+    border-bottom: 3px solid #fff;
+    padding-bottom: 10px;
+    letter-spacing: 10px;
+}
+
+h1 {
+    font-size: 90px;
+    text-transform: uppercase; /* this property changes the case of the letter*/
+    color: #fff;
+    font-weight: normal; /*This can majorly be "normal" or "bold" - lighter or bolder 100-900*/
+    line-height: 1.3;
+    text-shadow: 5px 8px 5px #000;
+    margin-top: 15px;
+}
+
+.arrow {
+    width: 80px;
+    margin-top: 100px;
+}
+
+h2 {
+    font-size: 45px;
+    /* text-decoration: underline; */
+    line-height: 1.3; /* 26px */
+
+    
+}
+
+h3 {
+    margin-bottom: 1.7em; /* 34px */
+    font-size: 1.25em; /*20px*/
+}
+
+
+img {
+    max-width: 100%; /* ---- This makes the image on the page adjust to the size of the screen instead of overlapping when the grow smaller*/
+                                   /* The images therefore occupy 100% of their parent element/container*/
+    margin-bottom: 20px;
+    height: 230px;
+    border-radius: 10px;
+}
+/*The 'margin'property won't work on this "li" selector because the display is "inline" */
+
+/* li {
+    display: inline;
+    padding: 0 12px;
+    border-right: 1px solid ;
+} */
+
+a {
+    color:#ffa949;
+    text-decoration: none; /* this adds line property to the text*/
+    
+}
+
+/* a:link {
+    color: orange;
+    text-decoration: none;
+} */
+
+a:visited {
+    color: lightblue;
+}
+
+a:hover {
+    color: rgb(247, 214, 155);
+    
+}
+ 
+/* LAYOUT STYLING --------------------*/
+
+.top-border {
+    border-top: 3px solid lightgrey ;  
+}
+
+/* MULTIPLE ELELMENTS HAVING THE SAME PROPERTY ARE TARGETED AT HERE ONCE */
+
+header,
+.primary-content,
+#main-footer {
+    text-align: center;
+}
+
+.primary-content,
+.secondary-content,
+#main-footer {
+    width: 75%;           /* The total Width increase to 950px beacuse of the "Padding" property */
+    /* box-sizing: border-box;   ---- The BOX-SIZING property help maintain the 950px value regardless of the padding property */
+
+    /* It's been added to the Universal selector to ease our entire page layout*/
+    
+    padding-right: 50px;
+    padding-left: 50px;
+    margin: auto;
+    max-width: 900px; /* --------- That is, at 900px, the width of the element stops expanding --------------------- */ 
+    
+}
+
+.primary-content {
+    padding-top: 25px;
+    padding-bottom: 95px;
+}
+
+
+.wildlife {
+    color: #fff;
+    background-color: #434852;
+    /* padding: 100px 120px; */
+    padding: 18% 24%;
+    border-top: 10px solid #ffa949;
+    text-align: left;
+    margin: 105px 0 60px; /* The "0" value applies to the left and right margin */
+    background-image: url('bear.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    box-shadow: inset 0px 0px 50px 30px #000 ; /* The inset value creates shadow evenly around every corners of the element */
+    border-radius: 50px 10px ;
+
+}
+
+.callout {
+    font-size: 1.25em;
+    border-bottom: 3px solid;
+    padding: 0 9px 3px;
+    margin-top: 2opx;
+    display: inline-block;
+
+}
+
+.secondary-content {
+    padding-top: 80px; 
+    padding-bottom: 70px;
+}
+
+
+/* ------- FLOAT STYLING ------------*/
+
+.resort,
+.tip {
+    width: 47%;
+}
+
+.resort {
+    float: right;       /* ---- floats the element to the right side of the container element - .Secondary-content section */
+}
+
+.tip {
+    float: left;         /* ---- floats the element to the left side of the container element - .Secondary-content section */
+}
+
+
+/* ------- FLOAT CLEARFIX ------------
+
+.group:after {                  -------this Styling clears the float collapsing issue------------
+    content: "";
+    display: table;
+    clear:both;                 ---this property clears the collapsing issue on both sides------------
+}*/
+
+/* ------- LIST STYLING  ------------*/
+
+ol,
+ul {
+    list-style-position: inside;
+    margin: 20px 0px;
+    padding-left: 0px;
+}
+
+ul {
+    list-style-type: square;
+}
+
+li {
+    margin-bottom: 10px;
+}
+#main-footer {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    clear: both;
+    /* text-align: center; */
+    border-bottom: 5px solid #ffa949;
+}
+
+/* --------- MEDIA QUERIES ----------------------------------------- */
+
+@media (max-width: 1024px) {
+    .primary-content,
+    .secondary-content {
+        width: 95%;
+
+    }
+    header {
+        height: 700px;
+        line-height: 4em;
+    }
+
+
+}
+
+@media (max-width:760px) {
+    body {
+        margin: 0;
+        padding: 0;
+    }
+    
+    header {
+        height: 600px;
+        line-height: 4em;
+    }
+    .pre-header {
+        font-size: 1.4em ;
+        letter-spacing: normal;
+    }
+    h1 {
+        font-size: 3em;
+        margin-top: 30px;
+    }
+
+    .arrow {
+        display: none;
+    }
+     h2 {
+         font-size: 30px;
+     }
+    .primary-content,
+    .secondary-content {
+        width: 100%;
+        font-size: .8em;
+        border-top: none;
+        margin: 20px 0  ;
+        padding: 20px 0 0;
+        
+    }
+
+   
+    .wildlife {
+        width: 100%;
+        padding: 10% 10%;
+        margin: 50px 0;
+    }
+
+    .resort,
+    .tip {
+        float: none;
+        padding: 10px;
+        width: 100%;
+    }
+
+    img {
+        width: 100%;
+    }
+    #main-footer {
+        width: 100%;
+        padding: 20px 0;
+    }
+
+}
